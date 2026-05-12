@@ -69,14 +69,14 @@ export const pt: Translations = {
     emailLabel: 'email',
     githubLabel: 'github',
     linkedinLabel: 'linkedin',
-    copied: '// copiado. café no caminho ☕',
+    copied: '// copiado. café à caminho ☕',
   },
   footer: {
     compiled: '// compilado com café',
     location: 'juazeiro, BA',
   },
   hidden: {
-    awayTitle: 'voltei já — to no café ☕',
+    awayTitle: 'volto já — to no café ☕',
   },
 };
 
