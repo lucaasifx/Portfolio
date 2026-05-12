@@ -36,10 +36,14 @@ export function Hero() {
         .from(`.${classes.metaLeft}, .${classes.metaRight}`, { opacity: 0, y: 12, duration: 0.5, stagger: 0.1 }, '-=0.2')
         .from(
           `.${classes.avatarFrame}`,
-          { scale: 0.85, opacity: 0, rotate: -4, duration: 0.9, ease: 'back.out(1.6)' },
+          { opacity: 0, y: 20, duration: 0.8, ease: 'power2.out', clearProps: 'transform' },
           '-=0.6',
         )
-        .from(`.${classes.cupWrap}`, { scale: 0.6, opacity: 0, duration: 0.8 }, '-=0.5')
+        .from(
+          `.${classes.cupCard}`,
+          { opacity: 0, y: 16, duration: 0.6, clearProps: 'transform' },
+          '-=0.4',
+        )
         .from(
           `.${classes.cupWrap} .steam path`,
           { opacity: 0, y: 12, duration: 0.6, stagger: 0.15 },
@@ -86,7 +90,7 @@ export function Hero() {
           </h1>
 
           <p className={classes.tagline}>
-            <span className="mono">{t.hero.taglinePrefix}</span>{' '}
+            <span className="mono">{`${t.hero.taglinePrefix} `}</span>
             <RotatingWord words={t.hero.taglineWords} />
           </p>
 
@@ -106,18 +110,27 @@ export function Hero() {
         </div>
 
         <div className={classes.right}>
-          <motion.div
-            className={classes.avatarFrame}
-            animate={{ y: [0, -6, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <div className={classes.avatarBg} aria-hidden />
-            <PixelAvatar size={260} />
-            <span className={`mono ${classes.avatarTag}`}>// since 2022</span>
-          </motion.div>
+          <div className={classes.avatarStack}>
+            <motion.div
+              className={classes.avatarFloat}
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              <div className={classes.avatarFrame}>
+                <div className={classes.avatarBg} aria-hidden />
+                <PixelAvatar size={240} />
+              </div>
+            </motion.div>
 
-          <div className={classes.cupWrap} aria-hidden>
-            <CoffeeCup size={120} />
+            <div className={classes.cupCard}>
+              <div className={classes.cupWrap} aria-hidden>
+                <CoffeeCup size={48} />
+              </div>
+              <div className={classes.cupMeta}>
+                <span className={`mono ${classes.cupLabel}`}>// fuel</span>
+                <span className={`mono ${classes.cupValue}`}>always brewing · since 2022</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

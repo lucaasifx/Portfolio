@@ -5,6 +5,8 @@
   overflow: hidden;
   display: block;
   flex-shrink: 0;
+  width: 100%;
+  aspect-ratio: 1;
 }
 
 .img {

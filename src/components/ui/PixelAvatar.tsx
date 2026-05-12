@@ -10,7 +10,7 @@ export function PixelAvatar({ size = 260, style }: Props) {
   return (
     <div
       className={classes.wrap}
-      style={{ width: size, height: size, ...style }}
+      style={{ maxWidth: size, ...style }}
       role="img"
       aria-label="Lucas avatar"
     >
