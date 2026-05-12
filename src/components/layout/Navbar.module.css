@@ -1,0 +1,84 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 6vw;
+  transition: background 0.4s ease, border-color 0.4s ease, padding 0.4s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.scrolled {
+  background: rgba(26, 15, 10, 0.78);
+  backdrop-filter: blur(12px);
+  border-bottom-color: var(--c-bean-light);
+  padding: 0.8rem 6vw;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.2rem;
+  text-decoration: none;
+  color: var(--c-crema);
+}
+
+.bracket {
+  color: var(--c-amber);
+  font-size: 1.1rem;
+}
+
+.name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.italic {
+  font-style: italic;
+  color: var(--c-amber);
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.link {
+  color: var(--c-cremaDim, #d9cdb8);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.link::before {
+  content: '·';
+  margin-right: 0.4rem;
+  color: var(--c-latte);
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: var(--c-amber);
+}
+
+.link:hover::before {
+  color: var(--c-amber);
+}
+
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+  .nav {
+    padding: 1rem 5vw;
+  }
+}

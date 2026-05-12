@@ -1,0 +1,137 @@
+.stack {
+  position: relative;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.headLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  color: var(--c-amber);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+}
+
+.title {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  margin: 0;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--c-crema);
+}
+
+.subtitle {
+  color: var(--c-latte);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+}
+
+.recipe {
+  display: grid;
+  grid-template-columns: 1.05fr auto 0.95fr;
+  gap: 3rem 2.5rem;
+  align-items: stretch;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.colLabel {
+  color: var(--c-amber);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.4rem;
+  text-transform: uppercase;
+}
+
+.colRight {
+  padding-top: 6rem;
+}
+
+.note {
+  margin: 1.4rem 0 0;
+  color: var(--c-latte);
+  font-size: 0.85rem;
+  max-width: 32ch;
+}
+
+.filterCol {
+  position: relative;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.5rem;
+}
+
+.filterTop {
+  position: relative;
+  z-index: 1;
+}
+
+.filterLine {
+  flex: 1;
+  position: relative;
+}
+
+.dripDot {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: var(--c-amber);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  animation: drip 3s ease-in infinite;
+}
+
+.d2 {
+  animation-delay: 1s;
+  background: var(--c-ember);
+}
+
+.d3 {
+  animation-delay: 2s;
+  background: var(--c-amber);
+  opacity: 0.7;
+}
+
+@keyframes drip {
+  0% { transform: translate(-50%, -300px); opacity: 0; }
+  25% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translate(-50%, 30px); opacity: 0; }
+}
+
+@media (max-width: 900px) {
+  .recipe {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+  .filterCol {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    height: 60px;
+    padding-top: 0;
+  }
+  .filterLine {
+    display: none;
+  }
+  .dripDot { display: none; }
+  .colRight { padding-top: 0; }
+}

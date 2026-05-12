@@ -1,0 +1,46 @@
+.wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px;
+  border: 1px solid var(--c-bean-light);
+  border-radius: 999px;
+  gap: 2px;
+  background: rgba(43, 24, 16, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.btn {
+  position: relative;
+  background: transparent;
+  border: 0;
+  color: var(--c-latte);
+  padding: 0.35rem 0.85rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: color 0.3s ease;
+}
+
+.btn:hover {
+  color: var(--c-crema);
+}
+
+.btn.active {
+  color: var(--c-espresso);
+}
+
+.pill {
+  position: absolute;
+  inset: 0;
+  background: var(--c-amber);
+  border-radius: 999px;
+  z-index: 0;
+}
+
+.label {
+  position: relative;
+  z-index: 1;
+}

@@ -1,0 +1,51 @@
+.projects {
+  position: relative;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.headLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  color: var(--c-amber);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+}
+
+.title {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  margin: 0;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--c-crema);
+}
+
+.subtitle {
+  color: var(--c-latte);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}

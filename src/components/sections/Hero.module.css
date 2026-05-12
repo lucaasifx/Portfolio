@@ -1,0 +1,253 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 9rem 6vw 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.stain {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.stainA {
+  width: 720px;
+  top: -160px;
+  right: -180px;
+  opacity: 0.55;
+}
+
+.stainB {
+  width: 640px;
+  bottom: -140px;
+  left: -160px;
+  opacity: 0.45;
+}
+
+.inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  align-items: center;
+  gap: 4rem;
+  flex: 1;
+  z-index: 1;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  max-width: 720px;
+}
+
+.eyebrow {
+  color: var(--c-amber);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+.heading {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9;
+  font-size: clamp(4rem, 11vw, 10rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: var(--c-crema);
+}
+
+.firstName,
+.lastName {
+  display: inline-block;
+  /* sem overflow:hidden aqui — cada .charWrap já limita o clip por-char */
+}
+
+.lastName {
+  align-self: flex-end;
+  color: var(--c-amber);
+  margin-top: -0.05em;
+}
+
+.italic {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.charWrap {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.tagline {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: var(--c-cremaDim, #d9cdb8);
+  margin: 0.6rem 0 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tagline .mono {
+  color: var(--c-latte);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  margin-top: 0.4rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--c-bean-light);
+  max-width: 540px;
+}
+
+.metaLeft,
+.metaRight {
+  color: var(--c-latte);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+  text-decoration: none;
+  color: var(--c-crema);
+  border: 1px solid var(--c-amber);
+  padding: 0.95rem 1.6rem;
+  border-radius: 999px 0 999px 0;
+  width: max-content;
+  background: rgba(224, 136, 32, 0.06);
+  transition: background 0.4s ease, border-radius 0.4s ease, color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.cta:hover {
+  background: var(--c-amber);
+  color: var(--c-espresso);
+  border-radius: 999px;
+}
+
+.cta .mono {
+  color: var(--c-amber);
+  transition: color 0.3s ease;
+}
+
+.cta:hover .mono {
+  color: var(--c-espresso);
+}
+
+.right {
+  position: relative;
+  height: 100%;
+  min-height: 360px;
+}
+
+.avatarFrame {
+  position: relative;
+  display: inline-block;
+  padding: 22px;
+  border-radius: 48px 8px 48px 8px;
+  background: linear-gradient(160deg, var(--c-bean) 0%, var(--c-espresso) 100%);
+  border: 1px solid var(--c-bean-light);
+  transform: rotate(-4deg);
+  margin-top: -40px;
+  z-index: 1;
+}
+
+.avatarBg {
+  position: absolute;
+  inset: 18px;
+  background:
+    repeating-linear-gradient(45deg, var(--c-bean) 0 6px, var(--c-bean-light) 6px 7px),
+    var(--c-bean);
+  border-radius: 36px 4px 36px 4px;
+  z-index: 0;
+}
+
+.avatarTag {
+  position: absolute;
+  bottom: -14px;
+  left: 22px;
+  background: var(--c-amber);
+  color: var(--c-espresso);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  z-index: 2;
+}
+
+.cupWrap {
+  position: absolute;
+  bottom: -10px;
+  right: -20px;
+  z-index: 2;
+  transform: rotate(8deg);
+}
+
+.scrollHint {
+  position: absolute;
+  bottom: 80px;
+  left: 6vw;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.75rem;
+  color: var(--c-latte);
+  letter-spacing: 0.1em;
+  z-index: 2;
+}
+
+.scrollLine {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(to right, var(--c-amber), transparent);
+}
+
+.marqueeWrap {
+  position: relative;
+  margin: 4rem -6vw 0;
+  z-index: 1;
+}
+
+@media (max-width: 980px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .right {
+    min-height: 320px;
+    display: flex;
+    justify-content: center;
+  }
+  .avatarFrame {
+    margin-top: 0;
+  }
+  .scrollHint {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding-top: 7rem;
+  }
+  .metaRow {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+}

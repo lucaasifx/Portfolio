@@ -1,0 +1,30 @@
+.wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background: var(--c-bean);
+  border-top: 1px solid var(--c-bean-light);
+  border-bottom: 1px solid var(--c-bean-light);
+  padding: 1.4rem 0;
+  mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+}
+
+.wrap:hover .track {
+  animation-play-state: paused;
+}
+
+.track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee-x linear infinite;
+  will-change: transform;
+}
+
+.text {
+  font-family: var(--ff-mono);
+  font-size: 0.95rem;
+  color: var(--c-cremaDim, #d9cdb8);
+  padding-right: 2rem;
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+}

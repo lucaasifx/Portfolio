@@ -1,0 +1,140 @@
+/* fonts */
+@import '@fontsource-variable/fraunces/standard.css';
+@import '@fontsource-variable/fraunces/standard-italic.css';
+@import '@fontsource-variable/inter/standard.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+
+:root {
+  --c-espresso: #1a0f0a;
+  --c-bean: #2b1810;
+  --c-bean-light: #3a2418;
+  --c-crema: #f3e9d8;
+  --c-crema-dim: #d9cdb8;
+  --c-latte: #8a6a52;
+  --c-amber: #e08820;
+  --c-ember: #c25e1a;
+
+  --ff-display: 'Fraunces Variable', Georgia, serif;
+  --ff-sans: 'Inter Variable', system-ui, sans-serif;
+  --ff-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--c-espresso);
+  color: var(--c-crema);
+  font-family: var(--ff-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* grain overlay (fixed, mix-blend) */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url('/grain.svg');
+  background-size: 240px 240px;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+}
+
+/* root container */
+#root {
+  isolation: isolate;
+}
+
+/* utility text classes */
+.mono {
+  font-family: var(--ff-mono);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.display {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.display-italic {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* selection */
+::selection {
+  background: var(--c-amber);
+  color: var(--c-espresso);
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--c-espresso);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--c-bean-light);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-latte);
+}
+
+/* focus visible — accessibility */
+:focus-visible {
+  outline: 2px solid var(--c-amber);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* section helper */
+.section {
+  position: relative;
+  padding: 8rem 6vw;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 5rem 5vw;
+  }
+}

@@ -1,0 +1,56 @@
+.row {
+  position: relative;
+  padding: 1.4rem 0;
+  cursor: default;
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.name {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0;
+  color: var(--c-crema);
+  transition: color 0.3s ease, transform 0.3s ease;
+  letter-spacing: -0.02em;
+}
+
+.row:hover .name {
+  color: var(--c-amber);
+  transform: translateX(6px);
+}
+
+.row:nth-child(odd) .name {
+  font-style: italic;
+}
+
+.dose {
+  font-size: 0.8rem;
+  color: var(--c-latte);
+  letter-spacing: 0.04em;
+}
+
+.desc {
+  margin: 0.3rem 0 0;
+  color: var(--c-cremaDim, #d9cdb8);
+  font-size: 1rem;
+  max-width: 38ch;
+}
+
+.line {
+  margin-top: 1.4rem;
+  height: 1px;
+  background: linear-gradient(to right, var(--c-bean-light) 0%, transparent 80%);
+  transform-origin: left;
+  transform: scaleX(0.7);
+  transition: transform 0.5s ease, background 0.5s ease;
+}
+
+.row:hover .line {
+  transform: scaleX(1);
+  background: linear-gradient(to right, var(--c-amber) 0%, transparent 80%);
+}
